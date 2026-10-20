@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Registration and Admission Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Student Registration and Admission Portal</h1>
+    <p class="count">Registered students: <strong id="total">0</strong></p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Register a student</h2>
+      <form id="form" novalidate>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" type="text" autocomplete="name">
+          <small class="error" id="name-error"></small>
+        </div>
+        <div class="field">
+          <label for="matric">Matriculation number</label>
+          <input id="matric" type="text" placeholder="e.g. CSC/2024/001">
+          <small class="error" id="matric-error"></small>
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" type="email" autocomplete="email">
+          <small class="error" id="email-error"></small>
+        </div>
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input id="phone" type="tel" placeholder="08012345678 or +2348012345678">
+          <small class="error" id="phone-error"></small>
+        </div>
+        <div class="field">
+          <label for="age">Age</label>
+          <input id="age" type="number" inputmode="numeric">
+          <small class="error" id="age-error"></small>
+        </div>
+        <div class="field">
+          <label for="department">Department</label>
+          <select id="department">
+            <option value="">Select a department</option>
+            <option>Computer Science</option>
+            <option>Software Engineering</option>
+            <option>Information Technology</option>
+            <option>Cybersecurity</option>
+            <option>Data Science</option>
+          </select>
+          <small class="error" id="department-error"></small>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" type="password" autocomplete="new-password">
+          <small class="error" id="password-error"></small>
+        </div>
+        <button type="submit">Register student</button>
+        <p id="success" class="success" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Registered students</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>#</th><th>Name</th><th>Matric no.</th><th>Email</th><th>Phone</th><th>Age</th><th>Department</th></tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <p id="empty" class="empty">No students registered yet. Use the form to add the first one.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
